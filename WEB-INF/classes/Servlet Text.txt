@@ -1,0 +1,76 @@
+http://www.studytonight.com/servlet/steps-to-create-servlet-using-tomcat-server.php
+
+
+javax.servlet
+javax.servlet.http
+
+
+Generic servlet class cosists below methods:
+
+public void init(ServletConfig)
+public abstract void service(ServletRequest request,ServletResposne response)
+public void destroy()
+public ServletConfig getServletConfig()
+public String getServletInfo()
+public ServletContext getServletContext()
+public String getInitParameter(String name)
+public Enumeration getInitParameterNames()
+public String getServletName()
+public void log(String msg)
+public void log(String msg, Throwable t)
+
+
+HttpServlet class osists below methods:
+
+service()
+doGet()
+doPost()
+
+Steps to Create Servlet Application using tomcat server
+
+1. Creating the Directory Structure
+
+Create the below directory structure inside Apache-Tomcat\webapps directory
+
+NameOfYourApplication/WEB-INF/classes
+
+All HTML, static files(images, css etc) are kept directly under Web application folder. While all the Servlet classes are kept inside classes folder.
+
+The web.xml (deployement descriptor) file is kept under WEB-INF folder.
+
+2. Creating a Servlet
+
+There are three different ways to create a servlet.
+
+By implementing Servlet interface
+By extending GenericServlet class
+By extending HttpServlet class
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+
+public MyServlet extends HttpServlet
+{
+ public void doGet(HttpServletRequest request,HttpServletResposne response) 
+                     throws ServletException
+ {
+   response.setContentType("text/html");
+   PrintWriter out = response.getWriter();
+   out.println("<html><body>");
+   out.println("<h1>Hello Readers</h1>");
+   out.println("</body></html>");
+ }
+}
+Write above code in a notepad file and save it as MyServlet.java
+
+
+3. Compiling a Servlet
+
+4. Create Deployment Descriptor
+5. Start Tomcat Server
+6. Set CATALINA_HOME and JAVA_HOME paths
+
+http://localhost:8080/ServletPractice/hello
+
+
