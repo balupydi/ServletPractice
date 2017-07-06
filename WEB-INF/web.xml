@@ -30,8 +30,16 @@
 	<servlet-class>MyServletToRD1</servlet-class>
 </servlet>
 
+<servlet>
+	<servlet-name>LoginServlet</servlet-name>
+	<servlet-class>MyServletToDetails</servlet-class>
+</servlet>
 
 
+  <welcome-file-list>  
+     <welcome-file>login.html</welcome-file> 
+	 
+  </welcome-file-list>  
 
 
 
@@ -54,6 +62,12 @@
 <servlet-mapping>
 	<servlet-name>Details</servlet-name>
 	<url-pattern>/Details</url-pattern>
+	<http-method>POST</http-method>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>LoginServlet</servlet-name>
+	<url-pattern>/Login</url-pattern>
 	<http-method>POST</http-method>
 </servlet-mapping>
 
