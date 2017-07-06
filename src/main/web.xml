@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+<servlet>
+	<servlet-name>Details</servlet-name>
+	<servlet-class>MyServletToDetails</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>DetailsRD</servlet-name>
+	<servlet-class>MyServletToRD1</servlet-class>
+</servlet>
+
+
+  <welcome-file-list>  
+     <welcome-file>login.html</welcome-file> 
+	 
+  </welcome-file-list>  
+
+
+<servlet-mapping>
+	<servlet-name>Details</servlet-name>
+	<url-pattern>/Details</url-pattern>
+	<http-method>POST</http-method>
+</servlet-mapping>
+
+
+<servlet-mapping>
+	<servlet-name>DetailsRD</servlet-name>
+	<url-pattern>/MyServletToRD1</url-pattern>
+	<http-method>POST</http-method>
+</servlet-mapping>
+
+</web-app>
